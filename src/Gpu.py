@@ -528,6 +528,7 @@ class Gpu:
         self.frequency_label.config(text=gpu_current_frequency)
         self.temperature_label.config(text=gpu_temperature)
         self.min_max_frequency_label.config(text=f'{gpu_min_frequency} - {gpu_max_frequency}')
+        self.memory_frequency_label.config(text=f'{gpu_memory_current_frequency} / {gpu_memory_max_frequency}')
         self.power_usage_label.config(text=gpu_power_current + " / " + gpu_power_max)
         #self.memory_frequency_label.config(text=f'{gpu_memory_current_frequency} / {gpu_memory_max_frequency}')
 

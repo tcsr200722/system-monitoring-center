@@ -39,7 +39,7 @@ gpu_pci_express_version_dict = {"2.5": "PCI-Express 1.0",
 # The content of the file is updated about 50-60 times in a second. 
 # 120 is used in order to get GPU load for AMD GPUs precisely.
 amd_gpu_load_read_frequency = 1 / 120
-amd_gpu_load_list = [0]
+amd_gpu_load_list = [0] * 120
 
 # This list is used in order to show full status of the process.
 # For more information, see: "https://man7.org/linux/man-pages/man5/proc.5.html".
@@ -2926,10 +2926,10 @@ def get_gpu_load_memory_frequency_power(gpu_pci_address, device_vendor_id, selec
         except Exception:
             gpu_load = "-"
 
-        """# Update the GPU load value. Because it is not get in "get_gpu_load_memory_frequency_power_amd" function.
+        # Update the GPU load value. Because it is not get in "get_gpu_load_memory_frequency_power_amd" function.
         gpu_load_memory_frequency_power_dict["gpu_load"] = gpu_load
 
-        # Get encoder/decoder engine load of AMD GPU by using "amdgpu_top" tool.
+        """ # Get encoder/decoder engine load of AMD GPU by using "amdgpu_top" tool.
         threading.Thread(target=gpu_encoder_decoder_load_amd_func, daemon=True).start()
 
         global gpu_tool_output_amdgpu_top
